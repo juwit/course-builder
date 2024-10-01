@@ -16,6 +16,9 @@ RUN apk add nodejs npm
 # install decktape
 RUN npm install -g decktape
 
+# install chromium (required by decktape)
+RUN apk add chromium
+
 # checks installation
 RUN task --version
 RUN asciidoctor --version

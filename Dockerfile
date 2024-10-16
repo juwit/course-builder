@@ -16,8 +16,9 @@ RUN apk add nodejs npm
 # install decktape
 RUN npm install -g decktape
 
-# install chromium (required by decktape)
-RUN apk add chromium
+# decktape needs chrome in a very specific version
+ENV PUPPETEER_CHROME_VERSION=127.0.6533.119
+RUN npx puppeteer install chrome@${PUPPETEER_CHROME_VERSION}
 
 # checks installation
 RUN task --version

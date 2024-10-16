@@ -26,3 +26,6 @@ RUN asciidoctor --version
 RUN asciidoctor-pdf --version
 RUN node --version
 RUN decktape version
+
+# create a user to run chrome in a user sandbox
+USER 1000

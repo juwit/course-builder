@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.19
 
 # install pre-requisites
 RUN apk add bash curl

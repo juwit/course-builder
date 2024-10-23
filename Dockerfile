@@ -28,4 +28,6 @@ RUN node --version
 RUN decktape version
 
 # create a user to run chrome in a user sandbox
-USER 1000
+ENV USER=task
+RUN adduser -G audio -G video -D task
+USER task

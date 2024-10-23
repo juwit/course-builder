@@ -16,8 +16,15 @@ RUN apk add nodejs npm
 # install decktape
 RUN npm install -g decktape
 
-# decktape needs chrome in a very specific version
-RUN apk add chromium
+# install chromium and its dependencies
+RUN apk add chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont
+
+# Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 # checks installation

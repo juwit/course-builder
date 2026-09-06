@@ -7,7 +7,7 @@ RUN apk add bash curl
 RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
 
 # install asciidoctor
-RUN apk add asciidoctor
+RUN apk add ruby ruby-dev asciidoctor
 RUN gem install asciidoctor-pdf rouge prawn-gmagick
 
 # install node (for decktape)

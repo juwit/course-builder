@@ -8,7 +8,7 @@ RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
 
 # install asciidoctor
 RUN apk add asciidoctor
-RUN gem install asciidoctor-pdf rouge
+RUN gem install asciidoctor-pdf rouge prawn-gmagick
 
 # install node (for decktape)
 RUN apk add nodejs npm

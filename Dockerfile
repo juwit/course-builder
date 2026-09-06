@@ -7,7 +7,7 @@ RUN apk add bash curl
 RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
 
 # install asciidoctor-pdf pre-requisites
-RUN apk add gcc make musl-dev graphicsmagick-devel
+RUN apk add gcc make musl-dev graphicsmagick-dev
 
 # install asciidoctor
 RUN apk add ruby ruby-dev asciidoctor
